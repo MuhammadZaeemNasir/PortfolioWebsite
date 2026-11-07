@@ -1,0 +1,8 @@
+{
+  "name": "zaeemnasir-ai-3d-worlds",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Premium 3D portfolio with AI concierge, browser voice assistant and optional Twilio calling agent",
+  "scripts": { "check": "node --check app.js && node --check assistant.js && node --check api/chat.js && node --check api/twilio/voice.js && node --check api/twilio/respond.js" },
+  "engines": { "node": ">=20" }
+}

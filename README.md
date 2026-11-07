@@ -1,52 +1,36 @@
-# ZAEEMNASIR — A Universe of Digital Possibilities
+# ZAEEMNASIR — Immersive 3D Personal Website (AI Edition)
 
-A premium, immersive, responsive personal portfolio for Mohammad Zaeem Nasir.
+A premium responsive 3D portfolio website for Mohammad Zaeem Nasir, upgraded with his original photograph, direct WhatsApp contact, a guided AI-style concierge, compatible-browser voice interaction, and optional real live AI + Twilio inbound call functions.
 
-## What's inside
+## Start here
 
-- `index.html` — the complete website's semantic HTML and SEO metadata.
-- `styles.css` — luxury design system, responsive layout, motion, and CSS planetary worlds.
-- `app.js` — interactive service filtering, 12 world detail panels, mobile menu, animated reveal, contact email composer, and a **native WebGL 3D planet** with a graceful CSS fallback.
-- `assets/zaeem-nasir.webp` — optimized original portrait.
-- `assets/Zaeem-Nasir-Premium-CV.pdf` — downloadable professional CV.
-- `assets/favicon.svg` — original brand symbol.
+1. Open `index.html` in your browser to preview the site, or run `python -m http.server 8000` and visit `http://localhost:8000`.
+2. Photos, 3D planet, services, navigation, WhatsApp links, normal phone call link and guided chat all work without configuring any API.
+3. **For live model-powered chat and model-powered browser voice replies**, deploy the complete folder (including `/api`) on Vercel and configure `OPENAI_API_KEY` server-side.
+4. **For actual inbound AI phone calls**, set up a separate Twilio voice-capable number and connect its webhook. The existing `+92 327 2746626` is a direct personal phone/WhatsApp link; the project does **not** automatically connect an AI agent to that number.
+5. See **`AI_SETUP_GUIDE.md`** for complete setup and security instructions.
 
-**No npm, build pipeline, or paid software is needed.** Just HTML, CSS, and JavaScript.
+## Website features
+- Premium cinematic hero with native WebGL planet and responsive CSS fallback
+- Original user-supplied portrait visible in the hero, About section, and concierge widget
+- All 12 service areas with filters and detail modals
+- WhatsApp chat CTA: `https://wa.me/923272746626`
+- Direct dial CTA: `tel:+923272746626`
+- Guided service concierge usable on any static website
+- Optional real AI chat via serverless `/api/chat` (OpenAI API key required)
+- Browser microphone/speech output option where supported and permitted
+- Optional inbound Twilio webhook sample for an AI voice answering agent
+- Email composer contact form that opens a draft in the visitor's own email app
+- Downloadable CV, favicon, SEO metadata, keyboard accessible navigation
 
-## Quick start
+## Files
 
-1. Extract the ZIP file.
-2. Open `index.html` in Chrome, Edge, or Safari to see the site.
-3. For a more realistic local preview, run a simple local server in this folder:
-   - Python: `python -m http.server 8000`
-   - Open `http://localhost:8000`
-4. To publish, upload **all files and the `assets` folder**, preserving the folder structure.
+- `index.html`, `styles.css`, `app.js` — main website
+- `assistant.js` — concierge, service knowledge fallback, browser voice integration
+- `api/` — serverless AI/chat and optional Twilio phone-call functions
+- `.env.example` — **template only**, never put real secrets in it
+- `AI_SETUP_GUIDE.md` — detailed deployment instructions
+- `assets/zaeem-nasir.webp` — user-supplied photo optimized for the web
+- `assets/Zaeem-Nasir-Premium-CV.pdf` — professional CV
 
-## Hosting
-
-### Hostinger
-
-1. Open hPanel → Websites → Manage → File Manager.
-2. Go to `public_html`.
-3. Upload the ZIP and extract its contents **inside** `public_html`, so `index.html` is at the root.
-4. Open your connected domain and refresh.
-
-### Netlify / Vercel
-
-You can drag and drop the extracted site folder into a static hosting service such as Netlify. For Vercel, import a Git repository containing these files as a static project. **No build command** is needed; the root directory must contain `index.html`.
-
-## Contact workflow
-
-The contact form prepares an email in the visitor's email application. It does **not** store or send submissions directly; no backend or third-party service is silently assumed. All contacts go to `mohammadzaeemnasir@gmail.com` when the visitor sends the drafted message.
-
-For direct form submissions or CRM integrations, add a backend or form service later and update the privacy policy accordingly.
-
-## Before going live
-
-- Confirm every offered service is one you can actually complete and quality-check.
-- Add selected real client projects / portfolio samples when available.
-- Consider connecting a real domain and custom email address.
-- If you change the personal name, email, CV, or portrait, update the files accordingly.
-- Optional Google Fonts load online; the design includes local system fallback fonts.
-- The hero 3D planet uses native WebGL. On devices where WebGL is unavailable, a CSS planet still displays.
-- The website is frontend-only and has no login or data collection scripts.
+The website source is editable. No npm dependencies are required for static mode. Live API calls may incur external service charges. Do not advertise a live AI phone line before it is deployed and tested.
