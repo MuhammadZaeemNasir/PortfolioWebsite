@@ -58,7 +58,13 @@ function showWorld(id){
   $('#dialog-list').innerHTML=s.items.map(x=>`<li>${esc(x)}</li>`).join('');
   const orb=$('#dialog-orb');
   orb.style.setProperty('--dialog-hi',s.colors[0]);orb.style.setProperty('--dialog-mid',s.colors[1]);orb.style.setProperty('--dialog-low',s.colors[2]);orb.style.setProperty('--dialog-glow',s.colors[3]);
-  $('#dialog-action').dataset.subject=s.name;
+  // Specific service-world conversations open WhatsApp with the world prefilled.
+  const action = $('#dialog-action');
+  const message = `Hello Zaeem, I visited your website and would like to discuss ${s.name}. Please share the next steps.`;
+  action.href = `https://wa.me/923272746626?text=${encodeURIComponent(message)}`;
+  action.target = '_blank';
+  action.rel = 'noopener noreferrer';
+  action.setAttribute('aria-label', `Discuss ${s.name} with Zaeem on WhatsApp`);
   if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
   document.body.style.overflow='hidden';
 }
@@ -67,7 +73,7 @@ grid.addEventListener('click',event=>{const btn=event.target.closest('[data-open
 $('#dialog-close').addEventListener('click',closeWorld);
 dialog.addEventListener('click',e=>{if(e.target===dialog)closeWorld()});
 dialog.addEventListener('close',()=>{document.body.style.overflow='' });
-$('#dialog-action').addEventListener('click',(e)=>{const title=e.currentTarget.dataset.subject;select.value=title;closeWorld()});
+$('#dialog-action').addEventListener('click',()=>{closeWorld()});
 
 // Subtle perspective card motion, with keyboard/reduced-motion accessibility intact.
 if(!prefersReducedMotion && window.matchMedia('(hover:hover) and (pointer:fine)').matches){

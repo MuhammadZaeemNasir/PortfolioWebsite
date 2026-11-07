@@ -40,3 +40,30 @@
 @media(max-width:700px){.nav-whatsapp{padding:8px}.nav-whatsapp span{display:none}.hero-identity{margin-top:24px}.contact-channels{grid-template-columns:1fr;gap:10px}.contact-channels .telephone{grid-column:auto}.assistant-dock{right:12px;bottom:13px;gap:7px}.assistant-launcher{min-width:0;padding:6px 9px 6px 6px;gap:8px}.launcher-copy strong{font-size:11px}.launcher-copy small{display:none}.launcher-avatar{width:38px;height:38px;flex-basis:38px}.launcher-symbol{font-size:18px}.dock-whatsapp{height:51px;width:51px}.assistant-panel{right:8px;bottom:79px;width:calc(100vw - 16px);height:min(655px,calc(100dvh - 96px));border-radius:21px}}
 @media(max-width:420px){.identity-photo{width:54px;height:54px;flex-basis:54px}.identity-copy strong{font-size:9px}.identity-copy span{font-size:8px}.identity-contact{width:30px;height:30px;font-size:18px;margin-left:0}.assistant-panel{width:calc(100vw - 12px);right:6px}.nav-whatsapp{padding:7px}}
 @media(prefers-reduced-motion:reduce){.assistant-voice-button.listening .mic-icon{animation:none}}
+
+/* VERSION 3 — PORTRAIT-FREE, NO DIRECT-CALL UI */
+/* Consolidated text-first About area: no placeholder or empty column. */
+.about-section{isolation:isolate}
+.about-section::after{content:"";position:absolute;z-index:-1;right:-18%;top:12%;width:min(65vw,750px);aspect-ratio:1;border-radius:50%;border:1px solid #8ef2e022;box-shadow:0 0 0 40px #ab8cff07,0 0 0 92px #74f7e708,0 0 0 150px #9577ff05;pointer-events:none}
+.about-layout{display:block;max-width:1080px}
+.about-copy{width:100%;max-width:980px;margin:0 auto}
+.about-copy h2{font-size:clamp(55px,7vw,108px);max-width:960px}
+.about-copy p{max-width:780px}
+.about-copy p.about-lead{max-width:850px;font-size:clamp(18px,2vw,23px)}
+.hero-caption{margin-top:58px}
+.contact-channels{grid-template-columns:repeat(2,minmax(0,1fr));max-width:940px;margin-inline:auto}
+/* Branded monograms replace unavailable portrait imagery. */
+.launcher-avatar,.assistant-header-avatar{display:grid;place-items:center;font:700 13px/1 var(--display);letter-spacing:-.04em;color:#061e26;box-shadow:inset 0 0 0 2px #ffffff32}
+.assistant-header-avatar{font-size:14px}
+.assistant-voice-button{flex:1}
+@media(max-width:700px){.about-section::after{right:-55%;top:18%;width:100vw}.about-layout{max-width:100%}.contact-channels{grid-template-columns:1fr;margin-top:38px}.hero-caption{margin-top:35px}.about-copy h2{font-size:clamp(49px,12vw,74px)}}
+
+/* VERSION 4 — WHATSAPP-FIRST CONVERSATION; NO PERSONAL PHOTO OR AI AVATARS */
+.assistant-launcher{min-width:204px;padding:13px 15px 13px 17px;gap:14px;justify-content:space-between}
+.assistant-launcher .launcher-copy{gap:3px}
+.assistant-launcher .launcher-copy strong{font-size:14px;letter-spacing:.005em}
+.assistant-launcher .launcher-symbol{font-size:20px}
+.assistant-heading{gap:0}
+.assistant-header{padding:19px 18px}
+.assistant-header h2{font-size:22px}
+@media(max-width:700px){.assistant-launcher{min-width:180px;padding:11px 12px 11px 14px}.assistant-launcher .launcher-copy strong{font-size:12px}.assistant-launcher .launcher-symbol{font-size:18px}}

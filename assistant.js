@@ -61,7 +61,7 @@
     const q = question.toLowerCase().trim();
     if (/^(hi|hello|hey|salam|assalam)/.test(q)) return 'Welcome! I can guide you through Zaeem’s 12 service worlds, help shape your project brief, or connect you directly on WhatsApp. What are you looking to create?';
     if (/price|cost|quote|budget|rate|fee|charge|how much|package/.test(q)) return 'Every project is scoped individually. Please share the service you need, a short brief, your deadline, and any budget range. Zaeem can discuss an accurate quote on WhatsApp: +92 327 2746626.';
-    if (/whatsapp|contact|phone|number|call|talk to (him|zaeem)|email/.test(q)) return 'Contact Zaeem on WhatsApp at +92 327 2746626, call the same number, or email mohammadzaeemnasir@gmail.com. For an instant message, use the green WhatsApp button.';
+    if (/whatsapp|contact|phone|number|call|talk to (him|zaeem)|email/.test(q)) return 'Contact Zaeem via WhatsApp at +92 327 2746626 or email mohammadzaeemnasir@gmail.com. Use the green WhatsApp button for a direct message.';
     if (/all services|what services|offer|everything|categories|portfolio|capabilit/.test(q)) return 'The 12 service worlds are: Graphics & Design, Programming & Tech, AI Services, Digital Marketing, Video & Animation, Writing & Translation, Music & Audio, Business, Finance Support, Personal Growth, Consulting Support, and Data & Photography. Which would you like to explore?';
     const match = categories.find(c => c.match.test(q));
     if (match) return `${match.name}: ${match.help} What outcome do you need, and when would you like the project delivered? I can help you prepare a clear message for Zaeem.`;
@@ -155,7 +155,7 @@
   voice.addEventListener('click', () => {
     if (recognizing) { stopVoice(); return; }
     if (!Recognizer) {
-      appendMessage('Microphone speech recognition is not available in this browser. You can still type your question here, or call Zaeem using the phone link.', 'bot', 'Browser voice compatibility');
+      appendMessage('Microphone speech recognition is not available in this browser. You can still type your question here or reach Zaeem through WhatsApp.', 'bot', 'Browser voice compatibility');
       return;
     }
     if (busy) return;
